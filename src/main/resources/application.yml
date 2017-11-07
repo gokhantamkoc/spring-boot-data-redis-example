@@ -1,0 +1,40 @@
+spring:
+#  data:
+#    redis:
+#      repositories:
+#        enabled: true # enable redis repositories
+  redis:
+    cluster:
+      # Redis server host.
+      # host: localhost
+      # Redis server port.
+      # port: 7000
+      # Max number of connections that can be allocated by the pool at a given time. Use a negative value for no limit.
+      max-active: 8
+      # Max number of "idle" connections in the pool. Use a negative value to indicate an unlimited number of idle connections.
+      max-idle: 8
+      # Maximum amount of time (in milliseconds) a connection allocation should block before throwing an exception when the pool is exhausted. Use a negative value to block indefinitely.
+      max-wait: -1
+      # Target for the minimum number of idle connections to maintain in the pool. This setting only has an effect if it is positive.
+      min-idle: 0
+      # Connection timeout in milliseconds.
+      timeout: 0
+      # Maximum number of redirects to follow when executing commands across the cluster.
+      # max-redirects:
+      # Comma-separated list of "host:port" pairs to bootstrap from.
+      nodes: localhost:7000,localhost:7001,localhost:7002,localhost:7003,localhost:7004,localhost:7005
+      # Database index used by the connection factory.
+      # database:
+      # Connection URL, will override host, port and password (user will be ignored), e.g. redis://user:password@example.com:6379
+      # url: redis://localhost:6379
+      # Login password of the redis server.
+      # password:
+      # Enable SSL support.
+      # ssl: false
+
+#      sentinel:
+#        # Name of Redis server.
+#        master:
+#        # Comma-separated list of host:port pairs.
+#        nodes: localhost:6379
+
